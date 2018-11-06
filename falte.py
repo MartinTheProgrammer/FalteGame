@@ -12,13 +12,16 @@
     Date: 10/30/18
     Time: 11:27 AM CST
 
-    Rewritten Code: Alpha (version 1.2.0)
+    Rewritten Code: Alpha (version 1.2.1)
     Date: 10/30/18
     Time: 9:06 PM CST
 '''
 import time
 import random
 import sys
+import raceEMod
+import raceDMod
+import raceHMod
 
 def delay_print(s):
     for c in s:
@@ -77,96 +80,14 @@ if (gender == genderM):
 
     race = input("What is your race?\n")
     if (race == raceE):
-        delay_print("Right. You remember that you are an Elf.")
-        delay_print(" You are now aware of your race.\n")
-        responseA = input("Are you fine will all of  your choices?\n")
-        if (responseA == responseY):
-            delay_print("You wake up on a cot in a tent. There is a desk next to you with some clothes on it's surface.")
-            responseB = input("Would you like to get up?\n")
-            if (responseB == responseY):
-                delay_print("You ease yourself up onto your feet.")
-                delay_print("Your balance is poor at the moment. You hear the footsteps of people outside. They are heavy and metal.\n")
-                delay_print("They are Elven soldiers.")
-                responseC = input("Would you like to inspect the articles of clothing on the desk?\n")
-                if (responseC == responseY):
-                    delay_print("You see a tunic, a belt, a pair of boots and some pants.")
-                    responseD = input("Would you like to equip these items?\n")
-                    if (responseD == responseY):
-                        delay_print("You quickly put on the articles of clothing.")
-                        delay_print("You are now clothed.")
-                    elif (responseD == responseN):
-                        delay_print("Even after inspection, you think it best to leave the clothes alone.")
-                        delay_print("You remain naked.")
-                elif (responseC == responseN):
-                    delay_print("You believe it best to not trust what you see.")
-                    delay_print("You remain naked.")
-            while (responseB == responseN):
-                if (responseB == responseN):
-                    delay_print("You decide to stay lying down.")
-                    delay_print("You hear the footsteps of people outside. They are heavy and metal.\n")
-                    delay_print("They are Elven soldiers.")
-        elif (responseA == responseN):
-            delay_print(gameOverA)
+        raceEMod.mainE() 
 
     elif (race == raceD):
-        delay_print("Right. You remember that you are a Dwarf.")
-        delay_print(" You are now aware of your race.\n")
-        responseA = input("Are you fine will all of  your choices?\n")
-        if (responseA == responseY):
-            delay_print("You wake up on a bunk in a bunkhouse. There is a table next to you with some clothes on it's surface.")
-            responseB = input("Would you like to get up?\n")
-            if (responseB == responseY):
-                delay_print("You ease yourself up onto your feet.")
-                delay_print("You are alone in this room. You hear nothing outside of the walls.")
-                responseC = input("Would you like to inspect the articles of clothing on the table?\n")
-                if (responseC == responseY):
-                    delay_print("You see a tunic, a pair of old work boots, a pair of pants and a belt.")
-                    responseD = input("Would you like to equip these items?\n")
-                    if (responseD == responseY):
-                        delay_print("You quickly put on the articles of clothing.")
-                        delay_print("You are now clothed.")
-                    elif (responseD == responseN):
-                        delay_print("Even after certain inspection, you think it best to leave the clothes alone.")
-                        delay_print("You remain naked.")
-                elif (responseC == responseN):
-                    delay_print("You decide to not trust what you see.")
-                    delay_print("You remain naked.")
-            while (responseB == responseN):
-                if (responseB == responseN):
-                    delay_print("You decide to stay lying down.")
-                    delay_print("You are alone in this room. You hear nothing outside of the walls.")
-        elif (responseA == responseN):
-            delay_print(gameOverA)
+        raceDMod.mainD()
 
     elif (race == raceH):
-        delay_print("Right. You remember that you are a Human.")
-        delay_print(" You are now aware of your race.\n")
-        responseA = input("Are you fine will all of  your choices?\n")
-        if (responseA == responseY):
-            delay_print("You wake up on a bed of straw in a military encampment. There is a crate next to you with some clothes on it's surface.")
-            responseB = input("Would you like to get up?\n")
-            if (responseB == responseY):
-                delay_print("You ease yourself up onto your feet.")
-                delay_print("You hear horses, soldiers and common folk alike. None of them seem to notice you.")
-                responseC = input("Would you like to inspect the articles of clothing on the crate?\n")
-                if (responseC == responseY):
-                    delay_print("You see a tunic, a belt, a pair of old boots and a pair of pants.")
-                    responseD = input("Would you like to equip these items?\n")
-                    if (responseD == responseY):
-                        delay_print("You quickly put the articles of clothing on.")
-                        delay_print("You are now clothed.")
-                    elif (responseD == responseN):
-                        delay_print("Even after close inspection, you decide it better to leave the clothes be.")
-                        delay_print("You remain naked.")
-                elif (responseC == responseN):
-                    delay_print("You decide to not trust what you see.")
-                    delay_print("You remain naked.")
-            while (responseB == responseN):
-                if (responseB == responseN):
-                    delay_print("You decide to stay lying down.")
-                    delay_print("You hear horses, soldiers and common folk alike. None of them seem to notice you.")
-        elif (responseA == responseN):
-            delay_print(gameOverA)
+        raceHMod.mainH()
+
 elif (gender == genderF):
     delay_print("Yes. You remember your feminine charms and intuition.")
     delay_print(" You are now aware of your gender.\n")
